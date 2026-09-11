@@ -4,7 +4,7 @@ use serde::Serialize;
 use transport::TransportClient;
 
 #[derive(Debug, Serialize)]
-struct ExampleResult<'a> {
+struct ExampleRequest<'a> {
     message: &'a str,
 }
 
@@ -23,7 +23,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!();
     println!("=== POST JSON ===");
 
-    let request = ExampleResult {
+    let request = ExampleRequest {
         message: "hello from agent-protocol-lab",
     };
 

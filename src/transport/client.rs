@@ -21,7 +21,6 @@ impl TransportClient {
     pub fn new() -> Result<Self, TransportError> {
         let client = Client::builder()
             .connect_timeout(Duration::from_secs(10))
-            .timeout(Duration::from_secs(30))
             .build()
             .map_err(TransportError::ClientBuild)?;
 
